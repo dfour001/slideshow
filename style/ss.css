@@ -1,0 +1,14 @@
+#display {
+    margin-left: 15px;
+}
+
+#btnNext {
+    width: 100px;
+    height: 50px;
+    text-align: center;
+    color: #4c4c4c;
+    background-color: #cecece;
+    border-radius: 10px;
+    margin-left: 15px;
+    cursor: pointer;
+}
