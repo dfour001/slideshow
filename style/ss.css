@@ -1,3 +1,7 @@
+body {
+    
+}
+
 .slideshow {
     margin: auto;
     max-width: 600px;
@@ -10,7 +14,8 @@
 }
 
 #display {
-    
+    position: relative;
+    height: 100vh;
 }
 
 #title {
@@ -29,6 +34,7 @@
     overflow-y: auto;
     
     margin: 15px;
+    margin-top: 0px;
     padding: 15px;
     
     color: white;
@@ -38,7 +44,8 @@
 #btnNext {
     position: absolute;
     bottom: 15px;
-    left: calc(50vh - 50px);
+    left: 50%;
+    transform: translateX(-50%);
     
     width: 100px;
     height: 50px;
@@ -67,4 +74,28 @@
     right: 0px;
     text-align: center;
     
+}
+
+
+/**********************
+*** SLIDE ANIMATION ***
+**********************/
+
+.slideOut {
+    transform: translateY(-150vh);
+    transition: 0.25s;
+}
+
+.slideIn {
+    transform: translateY(150vh);
+}
+
+.slideShow {
+    transform: translateY(0);
+    transition: 0.75s;
+}
+
+.textHide {
+    opacity: 0;
+    transition: 0.25s;
 }
