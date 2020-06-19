@@ -1,7 +1,8 @@
-function load_slideshow(url) {
+function load_slideshow(url) {    
     $.getJSON(url, function (r) {
         console.log(r);
-        start_slideshow(r);
+        let slides = r.slides;
+        start_slideshow(slides);
     });
 }
 
@@ -12,10 +13,6 @@ function start_slideshow(slides) {
     let curText = 0; // Index of slide text currently being displayed
     let curTextCount = slides[0].text.length; // Total count of slide texts
 
-
-    console.log('Slide Count: ' + slideCount);
-
-    $('#slideNum').html(curSlide + 1);
 
     // Set event listeners
     $('#btnNext').on('click', function () {
