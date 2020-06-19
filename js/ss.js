@@ -14,6 +14,10 @@ function start_slideshow(titlePage, slides) {
     let curText = 0; // Index of slide text currently being displayed
     let curTextCount = slides[0].text.length; // Total count of slide texts
 
+    let slide = $('#display');
+    let img = $('#img');
+    let btnNext = $('#btnNext');
+
 
     // Set event listeners
     $('#btnNext').on('click', function () {
@@ -80,8 +84,6 @@ function start_slideshow(titlePage, slides) {
         update_text($('#text'), slides[curSlide].text[curText]);
         $('#img').css("background-image", "url(" + slides[curSlide].images[0].url + ")");
 
-        let slide = $('#display');
-        let img = $('#img');
         slide.removeClass('slideOut');
         img.removeClass('slideOut');
         slide.addClass('slideIn');
@@ -90,21 +92,22 @@ function start_slideshow(titlePage, slides) {
 
     // Slide animations
     function slide_out() {
-        let slide = $('#display');
-        let img = $('#img');
         slide.removeClass(['slideShow', 'slideIn']);
         img.removeClass(['slideShow', 'slideIn']);
+        btnNext.addClass('arrowHide');
         slide.addClass('slideOut');
         img.addClass('slideOut');
     }
 
     function slide_in() {
-        slide = $('#display');
-        let img = $('#img');
         slide.removeClass('slideIn');
         img.removeClass('slideIn');
         slide.addClass('slideShow');
         img.addClass('slideShow');
+        
+        setTimeout(function() {
+            btnNext.removeClass('arrowHide');
+        }, 1000);
     }
 
 
@@ -114,7 +117,7 @@ function start_slideshow(titlePage, slides) {
             setTimeout(function () {
                 obj.html(txt);
                 obj.removeClass('textHide');
-            }, 100);
+            }, 750);
         };
     }
 }
