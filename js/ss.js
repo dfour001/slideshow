@@ -29,8 +29,9 @@ function start_slideshow(titlePage, slides) {
         if (curSlide < slideCount) {
             // If more text, change text, but not slide
             if (curText < curTextCount) {
-
-                $('#text').html(slides[curSlide].text[curText]);
+                let textObj = $('#text');
+                let text = slides[curSlide].text[curText];
+                update_text(textObj, text);
             } else { // If no more text, change to next slide
                 if (curSlide + 1 < slideCount) {
                     next_slide();
@@ -73,8 +74,10 @@ function start_slideshow(titlePage, slides) {
         curText = 0;
         curTextCount = slides[curSlide].text.length;
         $('#slideNum').html(curSlide + 1);
-        $('#title').html(slides[curSlide].title);
-        $('#text').html(slides[curSlide].text[curText]);
+        //$('#title').html(slides[curSlide].title);
+        update_text($('#title'), slides[curSlide].title);
+        //$('#text').html(slides[curSlide].text[curText]);
+        update_text($('#text'), slides[curSlide].text[curText]);
         $('#img').css("background-image", "url(" + slides[curSlide].images[0].url + ")");
 
         let slide = $('#display');
@@ -102,6 +105,17 @@ function start_slideshow(titlePage, slides) {
         img.removeClass('slideIn');
         slide.addClass('slideShow');
         img.addClass('slideShow');
+    }
+
+
+    function update_text(obj, txt) {
+        obj.addClass('textHide');
+        if (txt != '') {
+            setTimeout(function () {
+                obj.html(txt);
+                obj.removeClass('textHide');
+            }, 100);
+        };
     }
 }
 

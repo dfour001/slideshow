@@ -18,27 +18,30 @@ body {
     height: 100vh;
 }
 
-#title {
+.title {
     color: white;
     background-color: rgba(0,0,0,0.75);
     padding: 10px;
+    
+    transition: opacity 0.1s;
 }
 
 
-#text {
+.text {
     position: absolute;
+    display:inline;
     bottom: 75px;
     left: 0px;
+    /*transform: translateX(-50%);*/
     max-height: 50%;
-    max-width: 100%;
     overflow-y: auto;
-    
-    margin: 15px;
-    margin-top: 0px;
-    padding: 15px;
+
+    padding: 20px;
     
     color: white;
     background-color: rgba(0,0,0,0.75);
+    
+    transition: opacity 0.5s;
 }
 
 #btnNext {
@@ -64,7 +67,7 @@ body {
     background-image: url('../img/1.jpg');
     
     background-position: center;
-    background-size: cover;
+    /*background-size: cover;*/
     
     background-repeat: no-repeat;
     overflow: hidden;
@@ -97,5 +100,5 @@ body {
 
 .textHide {
     opacity: 0;
-    transition: 0.25s;
+    transition: 0.1s;
 }
