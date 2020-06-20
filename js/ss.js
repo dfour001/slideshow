@@ -71,23 +71,21 @@ function start_slideshow(titlePage, slides) {
         // Animate slide in
         setTimeout(function () {
             slide_in();
-        }, 300);
+        }, 500);
     }
     // Load next slide
     function update_slide_data(curSlide) {
         curText = 0;
         curTextCount = slides[curSlide].text.length;
         $('#slideNum').html(curSlide + 1);
-        //$('#title').html(slides[curSlide].title);
         update_text($('#title'), slides[curSlide].title);
-        //$('#text').html(slides[curSlide].text[curText]);
         update_text($('#text'), slides[curSlide].text[curText]);
         $('#img').css("background-image", "url(" + slides[curSlide].images[0].url + ")");
 
-        slide.removeClass('slideOut');
-        img.removeClass('slideOut');
         slide.addClass('slideIn');
         img.addClass('slideIn');
+        slide.removeClass('slideOut');
+        img.removeClass('slideOut');
     }
 
     // Slide animations
@@ -125,4 +123,4 @@ function start_slideshow(titlePage, slides) {
 
 
 
-load_slideshow('slideshows/testSlides.json');
+load_slideshow('slideshows/juneteenth.json');

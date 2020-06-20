@@ -3,7 +3,7 @@ body {
     overflow: hidden;
 }
 
-h1 {
+h2 {
     font-family: 'Bebas Neue', cursive;
 }
 
@@ -54,6 +54,7 @@ p {
     display: inline;
     bottom: 75px;
     left: 0px;
+    right: 0px;
     /*transform: translateX(-50%);*/
     max-height: 50%;
     overflow-y: auto;
@@ -123,7 +124,7 @@ p {
 
 .textHide {
     opacity: 0;
-    transition: opacity 0.75s;
+    transition: opacity 0.5s;
 }
 
 

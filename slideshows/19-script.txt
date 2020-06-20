@@ -4,7 +4,7 @@ Title:
 Paragraphs:
 <small>Image: An early celebration of Emancipation Day (Juneteenth) in 1900 in Texas.</small>
 
-Image: 19-1.jpg
+Image: 19-1.png
 
 ------
 Title: What is Juneteenth?
@@ -52,7 +52,7 @@ Title: State Recognition of Juneteenth
 Paragraphs:
 Hawaii, North Dakota and South Dakota are the only states that do not recognize Juneteenth, according to the Congressional Research Service.
 
- Of the 47 states that do acknowledge Juneteenth in one way or another, Texas, Virginia, New York and Pennsylvania are the only ones recognizing it as an official paid holiday for state employees.
+Of the 47 states that do acknowledge Juneteenth in one way or another, Texas, Virginia, New York and Pennsylvania are the only ones recognizing it as an official paid holiday for state employees.
 
 Image: make map
  
@@ -66,5 +66,5 @@ Activists are campaigning for the United States Congress to recognize Juneteenth
 
 On June 19, 2020, Senators from both parties sponsored a bill proposing the recognition of Juneteenth as a national holiday.
 
-Image: 19-7-2.jpg
+Image: 19-7.png
 
