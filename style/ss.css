@@ -127,6 +127,16 @@ p {
     transition: opacity 0.5s;
 }
 
+.zoomIn {
+    transform: scale(1.2);
+    transition: 25s;
+}
+
+.zoomOut {
+    transform: scale(0.8);
+    transition: 25s;
+}
+
 
 /*********************************
 *** Next Slide Arrow Animation ***

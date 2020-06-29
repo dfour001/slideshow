@@ -14,6 +14,7 @@ function start_slideshow(titlePage, slides) {
     let curText = 0; // Index of slide text currently being displayed
     let curTextCount = slides[0].text.length; // Total count of slide texts
 
+    let slideshow = $('.slideshow');
     let slide = $('#display');
     let img = $('#img');
     let btnNext = $('#btnNext');
@@ -77,32 +78,49 @@ function start_slideshow(titlePage, slides) {
     function update_slide_data(curSlide) {
         curText = 0;
         curTextCount = slides[curSlide].text.length;
+        
         $('#slideNum').html(curSlide + 1);
         update_text($('#title'), slides[curSlide].title);
         update_text($('#text'), slides[curSlide].text[curText]);
         $('#img').css("background-image", "url(" + slides[curSlide].images[0].url + ")");
 
-        slide.addClass('slideIn');
-        img.addClass('slideIn');
-        slide.removeClass('slideOut');
-        img.removeClass('slideOut');
+        // Move the slide from off screen above the window
+        // to off screen below the window.  The slideIn class
+        // moves the slide to the staging ground below the window.
+        slideshow.addClass('slideIn');
+        slideshow.removeClass('slideOut');
     }
 
     // Slide animations
     function slide_out() {
-        slide.removeClass(['slideShow', 'slideIn']);
-        img.removeClass(['slideShow', 'slideIn']);
+        // Remove the classes that display the slide and
+        // add the class that moves it off the top of the screen
+        slideshow.removeClass(['slideShow', 'slideIn']);
+        slideshow.addClass('slideOut');
+        
+        // Remove any image animations
+        img.removeClass(['zoomIn', 'zoomOut']);
+
+        // Hide the next arrow
         btnNext.addClass('arrowHide');
-        slide.addClass('slideOut');
-        img.addClass('slideOut');
     }
 
     function slide_in() {
-        slide.removeClass('slideIn');
-        img.removeClass('slideIn');
-        slide.addClass('slideShow');
-        img.addClass('slideShow');
+        // Animate the slide into the view from below the window
+        slideshow.removeClass('slideIn');
+        slideshow.addClass('slideShow');
         
+        // If images have an animation option, the animation class
+        // will be added here:
+        if (slides[curSlide].images[0].animation == 'zoomIn') {
+            img.addClass('zoomIn');
+        };
+        
+        if (slides[curSlide].images[0].animation == 'zoomOut') {
+            img.addClass('zoomOut');
+        }
+        
+        // Show the next arrow by removing the arrowHide class
         setTimeout(function() {
             btnNext.removeClass('arrowHide');
         }, 1000);

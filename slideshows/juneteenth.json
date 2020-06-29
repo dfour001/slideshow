@@ -38,7 +38,7 @@
             "images": [
                 {
                     "url": "img/19-3.jpg",
-                    "animation": "img animation"
+                    "animation": "zoomOut"
             },
                 {
                     "url": "img url",
@@ -76,7 +76,7 @@
             "images": [
                 {
                     "url": "img/19-5.png",
-                    "animation": "img animation"
+                    "animation": "zoomIn"
             },
                 {
                     "url": "img url",
