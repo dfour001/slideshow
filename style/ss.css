@@ -88,7 +88,6 @@ p {
     position: absolute;
     top: 0px;
     z-index: -1;
-    background-image: url('../img/1.jpg');
 
     background-position: center;
     background-size: cover;
